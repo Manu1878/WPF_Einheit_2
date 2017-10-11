@@ -25,6 +25,12 @@
                 </StackPanel>
             </Grid>
 
+            <Grid Grid.Row="2">
+                <Canvas>
+                    
+                </Canvas>
+            </Grid>
+
 
         </Grid>
 
