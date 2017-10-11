@@ -26,12 +26,10 @@
             </Grid>
 
             <Grid Grid.Row="2">
-                <Canvas>
-                    
-                </Canvas>
+                <Border BorderThickness="2" BorderBrush="Black" Margin="15" CornerRadius="10">
+                    <Canvas></Canvas>
+                </Border>
             </Grid>
-
-
         </Grid>
 
         <Grid HorizontalAlignment="Left" Height="321" Margin="0,0,0,-0.333" VerticalAlignment="Top" Width="100" ShowGridLines="True">
