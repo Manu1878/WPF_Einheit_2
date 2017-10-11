@@ -5,56 +5,65 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF_Einheit_2"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="600" Width="800">
     <Grid ShowGridLines="True">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="100*"/>
-            <ColumnDefinition Width="419*"/>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <Grid Grid.Column="1" HorizontalAlignment="Left" Height="321" VerticalAlignment="Top" Width="419" Margin="0,0,-0.333,-0.333" ShowGridLines="True">
+        <Grid Grid.Column="1" Margin="0,0,10,10" ShowGridLines="True">
             <Grid.RowDefinitions>
-                <RowDefinition Height="101*"/>
-                <RowDefinition Height="38*"/>
-                <RowDefinition Height="182*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="3*"/>
             </Grid.RowDefinitions>
-            <DataGrid HorizontalAlignment="Left" Height="81" Margin="10,10,0,0" VerticalAlignment="Top" Width="399"/>
-            <Grid Grid.Row="1">
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                    <Button Content="Löschen" Margin="5" Width="100" > </Button>
-                    <Button Content="Zeichnen" Margin="5" Width="100" > </Button>
-                </StackPanel>
-            </Grid>
+            <DataGrid x:Name="dtgListing"   Margin="10,10,0,0"/>
 
-            <Grid Grid.Row="2">
-                <Border BorderThickness="2" BorderBrush="Black" Margin="15" CornerRadius="10">
-                    <Canvas></Canvas>
-                </Border>
-            </Grid>
+            <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button Content="Löschen" Margin="5" Width="100" ></Button>
+                <Button x:Name="Draw" Content="Zeichnen" Margin="5" Width="100" Click="Draw_Click" ></Button>
+            </StackPanel>
+
+
+
+            <Border Grid.Row="2" BorderThickness="2" BorderBrush="Black" Margin="15" CornerRadius="10">
+                <Canvas x:Name="Canvas" ></Canvas>
+            </Border>
+
         </Grid>
 
-        <Grid HorizontalAlignment="Left" Height="321" Margin="0,0,0,-0.333" VerticalAlignment="Top" Width="100" ShowGridLines="True">
+        <Grid ShowGridLines="True" Grid.RowSpan="3">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="12*"/>
                 <ColumnDefinition Width="13*"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition Height="30*"/>
-                <RowDefinition Height="28*"/>
-                <RowDefinition Height="31*"/>
-                <RowDefinition Height="29*"/>
-                <RowDefinition Height="32*"/>
-                <RowDefinition Height="161*"/>
+                <RowDefinition Height="55*"/>
+                <RowDefinition Height="51*"/>
+                <RowDefinition Height="57*"/>
+                <RowDefinition Height="53*"/>
+                <RowDefinition Height="59*"/>
+                <RowDefinition Height="39*"/>
+                <RowDefinition Height="256*"/>
             </Grid.RowDefinitions>
-            <Label Content="Form"></Label>
-            <Label Grid.Row="1" Content="Pos X"></Label>
-            <Label Grid.Row="2" Content="Pos Y"></Label>
-            <Label Grid.Row="3" Content="Breite"></Label>
-            <Label Grid.Row="4" Content="Länge"></Label>
-            <Button Grid.Column="1" Margin="3"></Button>
-            <TextBox Grid.Row="1" Grid.Column="1" Margin="3"></TextBox>
-            <TextBox Grid.Row="2" Grid.Column="1" Margin="3"></TextBox>
-            <TextBox Grid.Row="3" Grid.Column="1" Margin="3"></TextBox>
-            <TextBox Grid.Row="4" Grid.Column="1" Margin="3"></TextBox>
+            <Label Content="Form" Margin="0,0,0,0.333"></Label>
+            <ComboBox x:Name="combo" Grid.Column="1" Margin="3,3,3,3.333"></ComboBox>
+
+            <Label Grid.Row="1" Content="Pos X" Margin="3,2.667"></Label>
+            <TextBox x:Name="PosX" Grid.Row="1" Grid.Column="1" Margin="3,2.667"></TextBox>
+
+            <Label Grid.Row="2" Content="Pos Y" Margin="0,0.333"></Label>
+            <TextBox x:Name="PosY" Grid.Row="2" Grid.Column="1" Margin="3,3.333,3,2.333"></TextBox>
+
+            <Label Grid.Row="2" Content="Breite" Margin="0,56.333,0,58.333" Grid.RowSpan="3"></Label>
+            <TextBox x:Name="Breite" Grid.Row="3" Grid.Column="1" Margin="3,2.667"></TextBox>
+
+            <Label Grid.Row="4" Content="Länge" Margin="0,0.333"></Label>
+            <TextBox x:Name="Laenge" Grid.Row="4" Grid.Column="1" Margin="3,3.333,3,2.333"></TextBox>
+
+            <Button x:Name="Neu" Grid.Row="5" Grid.Column="1" Content="Neu" Margin="5" Click="Neu_Click" ></Button>
+
+
         </Grid>
 
 
